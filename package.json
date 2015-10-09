@@ -11,12 +11,15 @@
   "license": "",
   "author": "noosxe <noosx.e@gmail.com> (https://noosxe.com/)",
   "devDependencies": {
-    "mocha": "2.3.3",
     "chai": "2.1.0",
-    "jshint": "2.8.0"
+    "istanbul": "0.3.22",
+    "jshint": "2.8.0",
+    "mocha": "2.3.3",
+    "mocha-lcov-reporter": "1.0.0"
   },
   "scripts": {
     "lint": "jshint index.js lib/**.js",
-    "test": "mocha --reporter spec --bail"
+    "test": "mocha --reporter spec --bail",
+    "test-ci": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec"
   }
 }
