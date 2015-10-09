@@ -11,15 +11,44 @@ Here is a descriptive example of using HuglaLogger
 ```javascript
 
 // require the module
-var HuglaLogger = require('hugla-logger');
+const HuglaLogger = require('hugla-logger');
 
 // instantiate
-var huglaLogger = new HuglaLogger();
+const huglaLogger = new HuglaLogger();
 
 // and use
 huglaLogger.debug('debug message');
+// result: DEBUG debug message
+
 huglaLogger.info('info message');
+// result: INFO info message
+
 huglaLogger.warn('warning message');
+// result: WARN warning message
+
 huglaLogger.error('error message');
+// result: ERROR error message
 
 ```
+
+You can also use "prefix" and "module" options`
+
+```javascript
+
+const HuglaLogger = require('hugla-logger');
+
+const prefixedLogger = new HuglaLogger({ prefix: 'example' });
+
+prefixedLogger.debug('debug message');
+// result: example DEBUG debug message
+
+const moduleLogger = new HuglaLogger({ module: 'example' });
+
+moduleLogger.debug('debug message');
+// result: [example] DEBUG debug message
+
+```
+
+## License
+
+[MIT](LICENSE)
